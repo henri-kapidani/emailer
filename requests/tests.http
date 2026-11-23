@@ -1,0 +1,19 @@
+@token=authtoken
+
+#############################################
+####    quick and dirty list all users   ####
+#############################################
+
+###
+GET {{baseUrl}}/emailer/healthcheck
+
+###
+POST {{baseUrl}}/emailer/v1/send
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+[
+  { "name": "email", "value": "Pinco Pallino" },
+  { "name": "name", "value": "p.pallino@example.com" },
+  { "name": "message", "value": "Hello, I want to ask something" }
+]
